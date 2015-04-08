@@ -336,6 +336,23 @@ struct sock *inet_diag_find_one_icsk(struct net *net,
 	return sk;
 }
 EXPORT_SYMBOL_GPL(inet_diag_find_one_icsk);
+<<<<<<< HEAD
+=======
+
+int inet_diag_dump_one_icsk(struct inet_hashinfo *hashinfo,
+			    struct sk_buff *in_skb,
+			    const struct nlmsghdr *nlh,
+			    struct inet_diag_req_v2 *req)
+{
+	struct net *net = sock_net(in_skb->sk);
+	struct sk_buff *rep;
+	struct sock *sk;
+	int err;
+
+	sk = inet_diag_find_one_icsk(net, hashinfo, req);
+	if (IS_ERR(sk))
+		return PTR_ERR(sk);
+>>>>>>> a86c638... Android N Support
 
 int inet_diag_dump_one_icsk(struct inet_hashinfo *hashinfo,
 			    struct sk_buff *in_skb,
