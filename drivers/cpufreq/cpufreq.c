@@ -338,7 +338,6 @@ void cpufreq_notify_transition(struct cpufreq_policy *policy,
 		__cpufreq_notify_transition(policy, freqs, state);
 }
 EXPORT_SYMBOL_GPL(cpufreq_notify_transition);
-
 /**
 cpufreq_notify_utilization - notify CPU userspace about CPU utilization change
 This function is called everytime the CPU load is evaluated by the ondemand governor. 
@@ -351,7 +350,6 @@ void cpufreq_notify_utilization(struct cpufreq_policy *policy,
 	if (policy)
 	policy->util = util;
 }
-
 /*********************************************************************
  *                          SYSFS INTERFACE                          *
  *********************************************************************/
@@ -1845,17 +1843,15 @@ EXPORT_SYMBOL_GPL(cpufreq_driver_target);
 int __cpufreq_driver_getavg(struct cpufreq_policy *policy, unsigned int cpu)
 {
     int ret = 0;
-    
     policy = cpufreq_cpu_get(policy->cpu);
     if (!policy)
-    return -EINVAL;
-    
+    return -EINVAL;  
     if (cpu_online(cpu) && cpufreq_driver->getavg)
-    ret = cpufreq_driver->getavg(policy, cpu);
-    
+    ret = cpufreq_driver->getavg(policy, cpu);  
     cpufreq_cpu_put(policy);
     return ret;
 }
+
 EXPORT_SYMBOL_GPL(__cpufreq_driver_getavg);
 
 static int __cpufreq_governor(struct cpufreq_policy *policy,
