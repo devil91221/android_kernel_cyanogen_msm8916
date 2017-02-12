@@ -42,7 +42,7 @@
 #include <linux/input.h>
 #include <linux/workqueue.h>
 #include <linux/slab.h>
-#include <linux/earlysuspend.h>
+#include <linux/new_exp_suspend.h>
 
 #define DEF_FREQUENCY_UP_THRESHOLD		(99)
 #define DEF_FREQUENCY_DOWN_THRESHOLD		(40)
