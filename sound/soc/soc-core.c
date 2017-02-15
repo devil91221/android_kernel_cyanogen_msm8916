@@ -2132,21 +2132,18 @@ unsigned int snd_soc_read(struct snd_soc_codec *codec, unsigned int reg)
 {
 	unsigned int ret;
 
-<<<<<<< HEAD
 	if (codec->read) {
 		ret = codec->read(codec, reg);
 		dev_dbg(codec->dev, "read %x => %x\n", reg, ret);
 		trace_snd_soc_reg_read(codec, reg, ret);
 	}
 	else
-=======
         if (codec->read) {
 		ret = codec->read(codec, reg);
 		dev_dbg(codec->dev, "read %x => %x\n", reg, ret);
 		trace_snd_soc_reg_read(codec, reg, ret);
         }
         else
->>>>>>> a86c638... Android N Support
 		ret = -EIO;
 
 	return ret;
@@ -2160,11 +2157,7 @@ unsigned int snd_soc_write(struct snd_soc_codec *codec,
 		dev_dbg(codec->dev, "write %x = %x\n", reg, val);
 		trace_snd_soc_reg_write(codec, reg, val);
 		return codec->write(codec, reg, val);
-<<<<<<< HEAD
-	}
-=======
         }
->>>>>>> a86c638... Android N Support
 	else
 		return -EIO;
 }

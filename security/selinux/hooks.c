@@ -437,7 +437,6 @@ static int sb_finish_set_opts(struct super_block *sb)
 	    !strcmp(sb->s_type->name, "pstore") ||
 	    !strcmp(sb->s_type->name, "debugfs") ||
 	    !strcmp(sb->s_type->name, "rootfs"))
-<<<<<<< HEAD
 		sbsec->flags |= SE_SBLABELSUPP;
 
 	/*
@@ -445,8 +444,6 @@ static int sb_finish_set_opts(struct super_block *sb)
 	 * setting SELinux context on in-core inodes.
 	 */
 	if (strncmp(sb->s_type->name, "rootfs", sizeof("rootfs")) == 0)
-=======
->>>>>>> a86c638... Android N Support
 		sbsec->flags |= SE_SBLABELSUPP;
 
 	/* Initialize the root inode. */

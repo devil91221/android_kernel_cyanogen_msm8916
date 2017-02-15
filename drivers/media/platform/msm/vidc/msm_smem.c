@@ -325,15 +325,6 @@ struct msm_smem *msm_smem_user_to_kernel(void *clt, int fd, u32 offset,
 	return mem;
 }
 
-<<<<<<< HEAD
-bool msm_smem_compare_buffers(void *clt, int fd, void *priv) {
-	struct smem_client *client = clt;
-	struct ion_handle *handle = NULL;
-	bool ret = false;
-
-	if (!clt || !priv) {
-		dprintk(VIDC_ERR, "Invalid params: %p, %p\n",clt, priv);
-=======
 bool msm_smem_compare_buffers(void *clt, int fd, void *priv)
 {
 	struct smem_client *client = clt;
@@ -342,7 +333,6 @@ bool msm_smem_compare_buffers(void *clt, int fd, void *priv)
 	if (!clt || !priv) {
 		dprintk(VIDC_ERR, "Invalid params: %p, %p\n",
 			clt, priv);
->>>>>>> a86c638... Android N Support
 		return false;
 	}
 	handle = ion_import_dma_buf(client->clnt, fd);
@@ -351,10 +341,7 @@ bool msm_smem_compare_buffers(void *clt, int fd, void *priv)
 	return ret;
 }
 
-<<<<<<< HEAD
 
-=======
->>>>>>> a86c638... Android N Support
 static int ion_cache_operations(struct smem_client *client,
 	struct msm_smem *mem, enum smem_cache_ops cache_op)
 {
